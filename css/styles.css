@@ -1,0 +1,5 @@
+@import "./global-styles.css";
+
+@import"./header.css";
+@import "./create-shoes.css";
+@import "./my-shoes.css";

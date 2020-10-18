@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myshOOes.store</title>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <img src="images/myshOOes.svg">
+        </div>
+        <nav class="header__nav">
+            <ul>
+                <li class="active"><a href="#">My shoes</a></li>
+                <li><a href="#">Create shoes</a></li>
+            </ul>
+        </nav>
+        <form class="header__form">
+            <input type="text" placeholder="Type something..." id="typedShoes">
+            <button class="header-form__search" onclick="findShoes()">Search</button>
+            <button class="header-form__clear" onclick="cleanShoes()">Clear</button>
+        </form>
+    </header>
+    <section class="main-part">
+        <aside class="create-shoes">
+            <h1 class="create__title">Create shoes</h1>
+            <div class="sort-function">
+                <p class="sort-function__paragraph">Sort by the most <br>expensive shoes</p>
+                <input type="checkbox" class="sort" onclick="sortShoes()">
+            </div>
+            <div class="count-function">
+                <p class="count-function__paragraph">Count total daily expences</p>
+                <button class="count" onclick="countShoesPrice()">Count</button>
+                <div class="total-expenses">
+                    <p class="total-expenses__paragraph">Total expenses</p>
+                    <p class="total-expenses__sum" id="resultPrice">845</p>
+                </div>
+            </div>
+        </aside>
+        <section class="my-shoes" id="myShoes"> 
+        </section>
+    </section>
+    <script src="js/script.js"></script>
+</body>
+</html>
