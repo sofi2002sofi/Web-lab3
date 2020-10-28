@@ -1,4 +1,5 @@
-let shoes=[{
+let shoes=[
+    {
         "sizeEURstandart": 40,
         "priceInUAH": 650,
         "brand": "Adidas",
@@ -42,28 +43,39 @@ let shoes=[{
     },
 ]
 
-const myShoes = document.getElementById("myShoes")
-function displayShoes(shoes){
-    let innerItem = "";
-    shoes.forEach(item => {
-        innerItem+=`<div class="shoes-pair">
+const myShoes = document.getElementById("myShoes");
+const searchButton = document.getElementById("search");
+
+function addElementToPage({ sizeEURstandart, priceInUAH, brand, color, hightfShaftlnSM }){
+    myShoes.insertAdjacentHTML(
+        "afterbegin",
+        `<div class="shoes-pair">
         <div class="shoes-pair__image"></div>
-        <h1 class="shoes-pair__title">This shoes</h1>
-        <p class="shoes-pair__paragraph">There are boots with price $${item.priceInUAH}, 
-        made by ${item.brand}, the color of these is ${item.color}, 
-        the size of the pair is ${item.sizeEURstandart} 
-        and the hight of shaft - ${item.hightfShaftlnSM}sm.</p>
+        <h1 class="shoes-pair__title">These shoes</h1>
+        <p class="shoes-pair__paragraph">There are boots with price $${priceInUAH}, 
+        made by ${brand}, the color of these is ${color}, 
+        the size of the pair is ${sizeEURstandart} 
+        and the hight of shaft - ${hightfShaftlnSM}sm.</p>
         <div class="edit-remove__buttons">
-            <button class="edit">Edit</button>
+            <button onclick="location.href ='file:///F:/projects/web/lab3/edit_shoes.html'" class="edit">Edit</button>
             <button class="remove">Remove</button>
         </div>
-    </div>`;});
-    myShoes.innerHTML=innerItem;
+    </div>`
+      );
+}
+
+function displayShoes(shoes){
+    myShoes.innerHTML = "";
+    for (const item of shoes) {
+        addElementToPage(item);   
+    }
 }
 
 displayShoes(shoes);
 
-function findShoes(){
+searchButton.addEventListener("click", (event) =>{
+    event.preventDefault();
+
     let foundItem = document.getElementById("typedShoes").value;
     let foundList=[];
     shoes.forEach(item => {
@@ -72,7 +84,7 @@ function findShoes(){
         }
     });
     displayShoes(foundList);
-}
+})
 
 function cleanShoes(){
     document.getElementById("typedShoes").value="";
@@ -94,6 +106,5 @@ function countShoesPrice(){
     shoes.forEach(item =>{
         shoesPrice+=item.priceInUAH;
     });
-    document.getElementById("resultPrice").innerHTML=shoesPrice;
+    document.getElementById("resultPrice").innerHTML=shoesPrice + '$';
 }
-

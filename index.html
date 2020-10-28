@@ -17,12 +17,12 @@
         <nav class="header__nav">
             <ul>
                 <li class="active"><a href="#">My shoes</a></li>
-                <li><a href="#">Create shoes</a></li>
+                <li><a href="file:///F:/projects/web/lab3/create_shoes.html">Create shoes</a></li>
             </ul>
         </nav>
         <form class="header__form">
             <input type="text" placeholder="Type something..." id="typedShoes">
-            <button class="header-form__search" onclick="findShoes()">Search</button>
+            <button class="header-form__search" id="search" ">Search</button>
             <button class="header-form__clear" onclick="cleanShoes()">Clear</button>
         </form>
     </header>
@@ -38,7 +38,7 @@
                 <button class="count" onclick="countShoesPrice()">Count</button>
                 <div class="total-expenses">
                     <p class="total-expenses__paragraph">Total expenses</p>
-                    <p class="total-expenses__sum" id="resultPrice">845</p>
+                    <p class="total-expenses__sum" id="resultPrice">845$</p>
                 </div>
             </div>
         </aside>
