@@ -16,14 +16,14 @@
         </div>
         <nav class="header__nav">
             <ul>
-                <li><a href="file:///F:/projects/web/lab3/index.html">My shoes</a></li>
+                <li><a href="http://127.0.0.1:5500//index.html">My shoes</a></li>
                 <li class="active"><a href="#">Create shoes</a></li>
             </ul>
         </nav>
     </header>
     <section class="main__part">
         <h1 class="create-edit-shoes__title">Edit shoes</h1>
-        <form id="add_form" class="create-edit-shoes__form">
+        <form id="add_form" class="create-edit-shoes__form" action="index.html">
             <label for="sizeEURstandart_input">Size (EUR standart):</label>
             <input type="number" id="sizeEURstandart_input" min="35" max="45" step="1">
             <label for="priceInUAH_input">Price ($):</label>
@@ -44,6 +44,6 @@
             <p>Change a few things up and try submitting again.</p>
         </div>
     </div>
-    <script src="js/form.js"></script>
+    <script type="module" src="js/edit-form.js"></script>
 </body>
 </html>

@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
-<body>
+<body id="main-page">
     <header class="header">
         <div class="header__logo">
             <img src="images/myshOOes.svg">
@@ -17,13 +17,13 @@
         <nav class="header__nav">
             <ul>
                 <li class="active"><a href="#">My shoes</a></li>
-                <li><a href="file:///F:/projects/web/lab3/create_shoes.html">Create shoes</a></li>
+                <li><a href="http://127.0.0.1:5500//create_shoes.html">Create shoes</a></li>
             </ul>
         </nav>
         <form class="header__form">
             <input type="text" placeholder="Type something..." id="typedShoes">
             <button class="header-form__search" id="search" ">Search</button>
-            <button class="header-form__clear" onclick="cleanShoes()">Clear</button>
+            <button class="header-form__clear" id="clear">Clear</button>
         </form>
     </header>
     <section class="main-part">
@@ -31,20 +31,21 @@
             <h1 class="create__title">Create shoes</h1>
             <div class="sort-function">
                 <p class="sort-function__paragraph">Sort by the most <br>expensive shoes</p>
-                <input type="checkbox" class="sort" onclick="sortShoes()">
+                <input type="checkbox" class="sort" id="sort">
             </div>
             <div class="count-function">
                 <p class="count-function__paragraph">Count total daily expences</p>
-                <button class="count" onclick="countShoesPrice()">Count</button>
+                <button class="count" id="count"">Count</button>
                 <div class="total-expenses">
                     <p class="total-expenses__paragraph">Total expenses</p>
-                    <p class="total-expenses__sum" id="resultPrice">845$</p>
+                    <p class="total-expenses__sum" id="resultPrice">0$</p>
                 </div>
             </div>
         </aside>
         <section class="my-shoes" id="myShoes"> 
         </section>
     </section>
-    <script src="js/script.js"></script>
+    <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/get-method.js"></script>
 </body>
 </html>
